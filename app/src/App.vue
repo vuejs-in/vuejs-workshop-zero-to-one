@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar />
-    <NewsList />
+    <NewsList v-bind:items="items" />
   </div>
 </template>
 

@@ -1,0 +1,85 @@
+<template>
+  <div class="news-item">
+    <div class="upvotes">
+      <span>100</span>
+    </div>
+    <div class="info">
+      <h2 class="title">Vue.js is awesome</h2>
+      <div class="meta">
+        <div class="by">by Sangeeth</div>
+        <div class="timestamp">3 hours ago</div>
+        <div class="comments">100 comments</div>
+      </div>
+    </div>
+    <div class="favorite">
+      <button>♥︎</button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+.news-item {
+  display: flex;
+}
+
+.upvotes {
+  color: #F66605;
+  font-weight: 700;
+  font-size: 1.5em;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  padding: 10px 0;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 1.3em;
+  margin: 0;
+  color: #333;
+}
+
+.meta {
+  color: #888;
+  font-size: 0.8em;
+  display: flex;
+  margin-top: 5px;
+}
+
+.meta :first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.meta > * {
+  border-left: 1px solid #888;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  margin-left: auto;
+}
+
+.favorite button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ccc;
+  font-size: 2em;
+}
+</style>
