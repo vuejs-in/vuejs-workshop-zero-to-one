@@ -1,11 +1,15 @@
 <template>
   <div class="news-list">
-    <VueSimpleSpinner line-fg-color="#F66605" />
+    <VueSimpleSpinner v-if="items.length === 0" line-fg-color="#F66605" />
     <NewsListItem
-      :title="items[0].title"
-      :numComments="items[0].numComments"
-      :author="items[0].author"
-      :upvotes="items[0].upvotes"
+      v-else
+      v-for="item of items"
+      :key="item.title"
+      :title="item.title"
+      :numComments="item.commentCount"
+      :author="item.author"
+      :upvotes="item.upvotes"
+      :timestamp="new Date(item.timestamp)"
     />
   </div>
 </template>

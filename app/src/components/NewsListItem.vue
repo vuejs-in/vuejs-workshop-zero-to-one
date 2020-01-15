@@ -1,14 +1,14 @@
 <template>
   <div class="news-item">
     <div class="upvotes">
-      <span>100</span>
+      <span>{{ upvotes }}</span>
     </div>
     <div class="info">
-      <h2 class="title">Vue.js is awesome</h2>
+      <h2 class="title">{{ title }}</h2>
       <div class="meta">
-        <div class="by">by Sangeeth</div>
-        <div class="timestamp">3 hours ago</div>
-        <div class="comments">100 comments</div>
+        <div class="by">{{ author }}</div>
+        <div class="timestamp">{{ timestamp }}</div>
+        <div class="comments">{{ numComments }} comments</div>
       </div>
     </div>
     <div class="favorite">
@@ -19,7 +19,13 @@
 
 <script>
 export default {
-
+  props: {
+    title: String,
+    author: String,
+    numComments: Number,
+    upvotes: Number,
+    timestamp: Date
+  }
 }
 </script>
 
@@ -36,6 +42,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-basis: 50px;
+  flex-shrink: 0;
+  text-align: center;
 }
 
 .info {
