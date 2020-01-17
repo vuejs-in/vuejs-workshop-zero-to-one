@@ -10,6 +10,14 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    redirect: { name: 'top' }
+  },
+  {
+    path: '/top/:page?',
+    params: {
+      page: 1
+    },
+    name: 'top',
     component: Home
   },
   {

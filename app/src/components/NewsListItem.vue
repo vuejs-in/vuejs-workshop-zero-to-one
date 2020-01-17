@@ -4,10 +4,12 @@
       <span>{{ upvotes }}</span>
     </div>
     <div class="info">
-      <h2 class="title">{{ title }}</h2>
+      <h2 class="title">
+        <a :href="url">{{ title }}</a>
+      </h2>
       <div class="meta">
         <div class="by">{{ author }}</div>
-        <div class="timestamp">{{ timestamp }}</div>
+        <div class="timestamp">{{ ago }}</div>
         <div class="comments">{{ numComments }} comments</div>
       </div>
     </div>
@@ -18,13 +20,25 @@
 </template>
 
 <script>
+import formatDistanceStrict from 'date-fns/formatDistanceStrict';
+
 export default {
   props: {
     title: String,
     author: String,
     numComments: Number,
     upvotes: Number,
-    timestamp: Date
+    timestamp: Date,
+    url: String
+  },
+
+  computed: {
+    ago() {
+      return formatDistanceStrict(this.timestamp, new Date(), {
+        includeSeconds: true,
+        addSuffix: true
+      });
+    }
   }
 }
 </script>
@@ -56,6 +70,11 @@ export default {
   font-size: 1.3em;
   margin: 0;
   color: #333;
+}
+
+.title a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .meta {

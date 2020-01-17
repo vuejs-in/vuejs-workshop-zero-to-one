@@ -5,7 +5,7 @@
     </div>
 
     <ul class="navbar-links">
-      <router-link tag="li" :to="{ name: 'home' }" exact>Top</router-link>
+      <router-link tag="li" :to="{ name: 'top' }">Top</router-link>
       <router-link tag="li" :to="{ name: 'new' }">New</router-link>
       <router-link tag="li" :to="{ name: 'about' }">About</router-link>
     </ul>
