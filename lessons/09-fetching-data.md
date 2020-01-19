@@ -1,4 +1,4 @@
-# Lesson 8
+# Lesson 9
 
 In this lesson, we'll connect to the publicly available HackerNews API and load real data onto our news list. We'll also implement the `<Paginator>` component, which will be linked to our router. There's quite a lot of stuff in this lesson so hop in.
 
